@@ -9,32 +9,36 @@
     android:layout_marginTop="@dimen/_5sdp"
     android:background="@drawable/containerbackground"
     android:orientation="vertical"
-    android:padding="@dimen/_8sdp">
-
-    <TextView
-        android:id="@+id/containertitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/abril_fatface"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="@dimen/_30sdp"
-        android:textStyle="bold" />
+    android:padding="0dp">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/notecontainerimage"
-        android:layout_width="@dimen/_276sdp"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/_266sdp"
         android:layout_gravity="center"
+        android:padding="0dp"
         android:scaleType="fitXY"
         android:visibility="gone"
         app:riv_corner_radius="@dimen/_7ssp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
+        android:id="@+id/containertitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
+        android:paddingStart="@dimen/_8sdp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="@dimen/_30sdp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/containerdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:paddingStart="@dimen/_8sdp"
         android:text="TextView"
         android:textColor="#000000" />
 
@@ -43,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abril_fatface"
+        android:paddingStart="@dimen/_8sdp"
         android:text="TextView"
         android:textColor="#000000"
         android:textSize="@dimen/_18sdp" />
@@ -52,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abril_fatface"
+        android:paddingStart="@dimen/_8sdp"
         android:text="TextView"
         android:textColor="#000000" />
 </LinearLayout>

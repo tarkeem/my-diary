@@ -48,12 +48,14 @@ class MyBottomSheetFragment: BottomSheetDialogFragment()
     {
         binding.color2.setOnClickListener {
             binding.frame1.removeView(binding.doneimage)
+            binding.frame2.removeView(binding.doneimage)
             binding.frame3.removeView(binding.doneimage)
             binding.frame2.addView(binding.doneimage)
 
            colorstate.postValue(Color.RED)
         }
         binding.color1.setOnClickListener {
+            binding.frame1.removeView(binding.doneimage)
             binding.frame2.removeView(binding.doneimage)
             binding.frame3.removeView(binding.doneimage)
             binding.frame1.addView(binding.doneimage)
@@ -61,8 +63,9 @@ class MyBottomSheetFragment: BottomSheetDialogFragment()
             colorstate.postValue(Color.BLUE)
         }
         binding.color3.setOnClickListener {
-            binding.frame2.removeView(binding.doneimage)
             binding.frame1.removeView(binding.doneimage)
+            binding.frame2.removeView(binding.doneimage)
+            binding.frame3.removeView(binding.doneimage)
             binding.frame3.addView(binding.doneimage)
             colorstate.postValue(Color.YELLOW)
         }
@@ -84,11 +87,12 @@ class MyBottomSheetFragment: BottomSheetDialogFragment()
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        data!!.data.let {
+        data?.data?.let {
             picstate.postValue(it.toString())
             println("...............................")
             println(it.toString())
         }
+
 
     }
 

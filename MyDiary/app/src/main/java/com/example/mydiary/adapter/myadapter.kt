@@ -2,6 +2,7 @@ package com.example.mydiary.adapter
 
 import android.app.PendingIntent.getActivity
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.ColorFilter
 import android.graphics.drawable.Drawable
@@ -78,7 +79,16 @@ class myCustomAdapter(var notes:List<Note>,var cxt:Context) : RecyclerView.Adapt
         {
 
             holder.noteimage.visibility=View.VISIBLE
-            holder.noteimage.setImageBitmap(NotesActivity.prepareImage(Uri.parse(mynote.imagepath),cxt))
+            var imageBitmap: Bitmap? =NotesActivity.prepareImage(Uri.parse(mynote.imagepath),cxt)
+            if(imageBitmap==null)
+            {
+                holder.noteimage.setImageResource(R.drawable.ic_baseline_image_not_supported_24)
+            }
+            else
+            {
+                holder.noteimage.setImageBitmap(imageBitmap)
+            }
+
         }
 
 
